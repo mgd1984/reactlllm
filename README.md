@@ -7,8 +7,7 @@ ReactLLM is a chat application that allows users to interact with a local langua
 Before you begin, ensure you have met the following requirements:
 
 - You have a recent version of Node.js installed.
-- You have downloaded [LM Studio](https://lmstudio.ai/) and have a Local Inference Server running. Instructions here: [LM Studio Local Inference Server](https://docs.lmstudio.ai/quickstart/local-inference-server)
-- You have a Local Inference Server running a local LLM model. LM Studio makes this super easy. I've tested with [openhermes-2.5-mistral-7b.Q5_K_S.gguf](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)
+- You have downloaded [LM Studio](https://lmstudio.ai/) and have a Local Inference Server running. LM Studio makes this super easy. I've tested with [openhermes-2.5-mistral-7b.Q5_K_S.gguf](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)
 
 ## Installation
 
@@ -18,19 +17,6 @@ Follow these steps to install and run the app:
 2. Navigate to the project directory: `cd reactllm`
 3. Install the dependencies: `npm install`
 
-## Configuration
-
-Start a local HTTP server that behaves like OpenAI's API.
-
-Request and response formats follow OpenAI's Chat Completion API.
-
-Both streaming and non-streaming usages are supported.
-
-## What are the minimum hardware / software requirements?
-Apple Silicon Mac (M1/M2/M3) with macOS 13.6 or newer
-Windows / Linux PC with a processor that supports AVX2 (typically newer PCs)
-16GB+ of RAM is recommended. For PCs, 6GB+ of VRAM is recommended
-NVIDIA/AMD GPUs supported
 
 ## Running the App
 
@@ -47,6 +33,18 @@ To use the application, simply type your message into the user prompt input fiel
 - User prompt input field: Allows the user to type a message to the AI assistant.
 - System prompt input field: Allows the user to type a system prompt for the AI assistant.
 - Chat window: Displays the messages from the user and the AI assistant.
+
+## Local Inference Server Notes
+
+The local HTTP server created via LM Studio emulates the OpenAI API request and reponse formats which allows you to use the same code for both local and remote inference.
+
+Both streaming and non-streaming usages are supported.
+
+## What are the minimum hardware / software requirements?
+- Apple Silicon Mac (M1/M2/M3) with macOS 13.6 or newer
+- Windows / Linux PC with a processor that supports AVX2 (typically newer PCs)
+- 16GB+ of RAM is recommended. For PCs, 6GB+ of VRAM is recommended
+- NVIDIA/AMD GPUs supported
 
 ## Contributing
 

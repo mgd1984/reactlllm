@@ -1,20 +1,21 @@
 # ReactLLM
 
-ReactLLM is a chat application that allows users to interact with an AI assistant. It uses LM Studio and runs a Mistral 7b fine-tuned model.
+ReactLLM is a chat application that allows users to interact with a local language model (LLM). It uses LM Studio and runs a Mistral 7b fine-tuned model. This project was bootstrapped with [Create React App](www.github.com/facebook/create-react-app). It is intended to be used as a template for building your own chat application.
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
 - You have a recent version of Node.js installed.
-- You have access to LM Studio and have a Mistral 7b fine-tuned model available.
+- You have access to [LM Studio](https://lmstudio.ai/).
+- You have a Mistral 7b fine-tuned model in LM Studio. I've tested with [openhermes-2.5-mistral-7b.Q5_K_S.gguf](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)
 
 ## Installation
 
 Follow these steps to install and run the app:
 
-1. Clone the repository: `git clone https://github.com/yourusername/your-app-name.git`
-2. Navigate to the project directory: `cd your-app-name`
+1. Clone the repository: `git clone https://github.com/mgd1984/reactllm.git`
+2. Navigate to the project directory: `cd reactllm`
 3. Install the dependencies: `npm install`
 
 ## Configuration

@@ -34,7 +34,7 @@ To use the application, simply type your message into the user prompt input fiel
 - System prompt input field: Allows the user to type a system prompt for the AI assistant.
 - Chat window: Displays the messages from the user and the AI assistant.
 
-![Screenshot](ezgif.com-speed (1).gif)
+![Screenshot](ezgif.com-speed.gif)
 
 ## Local Inference Server Notes
 

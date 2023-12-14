@@ -36,7 +36,8 @@ To use the application, simply type your message into the user prompt input fiel
 
 ## Local Inference Server Notes
 
-The local HTTP server created via LM Studio emulates the OpenAI API request and reponse formats which allows you to use the same code for both local and remote inference.
+The local HTTP server created via LM Studio emulates the [OpenAI chat completions API](https://platform.openai.com/docs/api-reference/chat/streaming). This allows you to use the same code for both local and remote inference.
+ request and reponse formats which allows you to use the same code for both local and remote inference.
 
 Both streaming and non-streaming usages are supported.
 

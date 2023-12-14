@@ -1,6 +1,6 @@
-# Your App Name
+# ReactLLM
 
-Your App Name is a chat application that allows users to interact with an AI assistant. It uses LM Studio and runs a Mistral 7b fine-tuned model.
+ReactLLM is a chat application that allows users to interact with an AI assistant. It uses LM Studio and runs a Mistral 7b fine-tuned model.
 
 ## Prerequisites
 

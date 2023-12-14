@@ -7,7 +7,8 @@ ReactLLLM is a basic chat application that allows users to interact with a small
 Before you begin, ensure you have met the following requirements:
 
 - You have a recent version of Node.js installed.
-- You have downloaded [LM Studio](https://lmstudio.ai/) and have a Local Inference Server running. LM Studio makes this super easy. I've tested with [openhermes-2.5-mistral-7b.Q5_K_S.gguf](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)
+- You have downloaded [LM Studio](https://lmstudio.ai/) and have a Local Inference Server running. LM Studio makes this super easy. I've tested with [openhermes-2.5-mistral-7b.Q5_K_S.gguf](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF), but there are [many other](https://huggingface.co/TheBloke) models to choose from. The model you choose will determine the quality of the responses you get from the assistant, but is also dependent upon your hardware. 
+
 
 ## Installation
 

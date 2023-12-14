@@ -1,4 +1,4 @@
-# ReactLLM
+# ReactLLLM (React Local LLM)
 
 ReactLLM is a chat application that allows users to interact with a local language model (LLM). It uses LM Studio and runs a Mistral 7b fine-tuned model. This project was bootstrapped with [Create React App](www.github.com/facebook/create-react-app). It is intended to be used as a template for building your own chat application.
 
@@ -14,7 +14,7 @@ Before you begin, ensure you have met the following requirements:
 
 Follow these steps to install and run the app:
 
-1. Clone the repository: `git clone https://github.com/mgd1984/reactllm.git`
+1. Clone the repository: `git clone https://github.com/mgd1984/reactlllm.git`
 2. Navigate to the project directory: `cd reactllm`
 3. Install the dependencies: `npm install`
 

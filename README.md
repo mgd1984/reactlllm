@@ -7,8 +7,8 @@ ReactLLM is a chat application that allows users to interact with a local langua
 Before you begin, ensure you have met the following requirements:
 
 - You have a recent version of Node.js installed.
-- You have access to [LM Studio](https://lmstudio.ai/).
-- You have a Mistral 7b fine-tuned model in LM Studio. I've tested with [openhermes-2.5-mistral-7b.Q5_K_S.gguf](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)
+- You have downloaded [LM Studio](https://lmstudio.ai/) and have a Local Inference Server running. Instructions here: [LM Studio Local Inference Server](https://docs.lmstudio.ai/quickstart/local-inference-server)
+- You have a Local Inference Server running a local LLM model. LM Studio makes this super easy. I've tested with [openhermes-2.5-mistral-7b.Q5_K_S.gguf](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)
 
 ## Installation
 
@@ -20,12 +20,17 @@ Follow these steps to install and run the app:
 
 ## Configuration
 
-Before you can run the app, you need to configure it to use your Mistral 7b fine-tuned model:
+Start a local HTTP server that behaves like OpenAI's API.
 
-1. In LM Studio, navigate to your Mistral 7b fine-tuned model and copy its ID.
-2. In the project directory, create a new file named `.env`.
-3. In the `.env` file, add the following line: `REACT_APP_MODEL_ID=your-model-id`
-    Replace `your-model-id` with the ID of your Mistral 7b fine-tuned model.
+Request and response formats follow OpenAI's Chat Completion API.
+
+Both streaming and non-streaming usages are supported.
+
+## What are the minimum hardware / software requirements?
+Apple Silicon Mac (M1/M2/M3) with macOS 13.6 or newer
+Windows / Linux PC with a processor that supports AVX2 (typically newer PCs)
+16GB+ of RAM is recommended. For PCs, 6GB+ of VRAM is recommended
+NVIDIA/AMD GPUs supported
 
 ## Running the App
 

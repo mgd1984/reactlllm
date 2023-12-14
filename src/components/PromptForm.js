@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { marked } from 'marked';
 import hljs from 'highlight.js';
-import { sendPromptsStream } from '../services/llmService';
+import { sendPromptsStream, stopPromptsStream } from '../services/llmService';
 import './PromptForm.css';
 
 // Set up custom renderer for marked
@@ -22,6 +22,14 @@ function PromptForm() {
     const [userPrompt, setUserPrompt] = useState('');
     const [systemPrompt, setSystemPrompt] = useState('');
     const [messages, setMessages] = useState([]);
+    const [isGenerating, setIsGenerating] = useState(false);
+
+    useEffect(() => {
+        return () => {
+            // Cleanup function to stop generating prompts when component unmounts
+            stopPromptsStream();
+        };
+    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -38,6 +46,7 @@ function PromptForm() {
         setMessages((prevMessages) => [...prevMessages, systemMessage]);
 
         try {
+            setIsGenerating(true);
             await sendPromptsStream(systemMessage.content, userPrompt, (chunk) => {
                 systemMessage.content += chunk;
                 setMessages((prevMessages) => {
@@ -48,21 +57,29 @@ function PromptForm() {
             });
         } catch (error) {
             console.error(error);
+        } finally {
+            setIsGenerating(false);
         }
 
         setUserPrompt('');
     };
 
+    const handleStopGenerating = () => {
+        stopPromptsStream();
+        setIsGenerating(false);
+    };
 
     return (
-        
         <div className="chat-container">
             <div className="chat-messages">
                 <div className="banner">
-                <h1 className="title">Gener8or LLM</h1>
+                    <h1 className="title">Gener8or LLM</h1>
                 </div>
                 {messages.map((message, index) => (
-                    <div key={index} className={message.sender === 'user' ? 'chat-message user-message' : 'chat-message system-message'}>
+                    <div
+                        key={index}
+                        className={message.sender === 'user' ? 'chat-message user-message' : 'chat-message system-message'}
+                    >
                         <div dangerouslySetInnerHTML={{ __html: marked(message.content) }} />
                         <div className="message-sender">{message.sender}</div> {/* Label for the sender role */}
                     </div>
@@ -81,7 +98,14 @@ function PromptForm() {
                     onChange={(e) => setSystemPrompt(e.target.value)}
                     placeholder="Type system prompt..."
                 />
-                <button type="submit">Send</button>
+                <button type="submit" disabled={isGenerating}>
+                    {isGenerating ? 'Generating...' : 'Send'}
+                </button>
+                {isGenerating && (
+                    <button type="button" onClick={handleStopGenerating}>
+                        Stop Generated
+                    </button>
+                )}
             </form>
         </div>
     );

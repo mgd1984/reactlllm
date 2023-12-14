@@ -54,7 +54,16 @@ export async function sendPrompts(systemPrompt, userPrompt) {
     }
 }
 
+const url = 'http://localhost:1234/v1/chat/completions'; // Replace with your actual URL
+
+let controller = new AbortController();
+let requestInProgress = false;
+
 export async function sendPromptsStream(systemPrompt, userPrompt, onChunkReceived) {
+    controller = new AbortController();
+    requestInProgress = true;
+    // Set up the fetch request with the controller's signal
+    fetch(url, { signal: controller.signal })
     const startTime = Date.now();
     let completionText = '';
 
@@ -70,7 +79,8 @@ export async function sendPromptsStream(systemPrompt, userPrompt, onChunkReceive
             temperature: 0.7,
             max_tokens: -1,
             stream: true
-        })
+        }),
+        signal: controller.signal // Pass the signal to the fetch request
     };
 
     const response = await fetch('http://localhost:1234/v1/chat/completions', requestOptions);
@@ -95,15 +105,20 @@ export async function sendPromptsStream(systemPrompt, userPrompt, onChunkReceive
                 onChunkReceived(chunkContent); // Call the callback function with the new chunk
             }
 
-            // ... existing code ...
         }
     } finally {
         reader.releaseLock();
+        requestInProgress = false;
     }
-
 
     console.log(`Full response received ${(Date.now() - startTime) / 1000} seconds after request`);
     console.log(`Full text received: ${completionText}`);
 
     return completionText;
+}
+
+export function stopPromptsStream() {
+    if (requestInProgress) {
+        controller.abort(); // This will stop the fetch request
+    }
 }

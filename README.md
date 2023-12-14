@@ -1,6 +1,6 @@
 # ReactLLLM (React Local LLM)
 
-ReactLLM is a chat application that allows users to interact with a local language model (LLM). It uses LM Studio and runs a Mistral 7b fine-tuned model. This project was bootstrapped with [Create React App](www.github.com/facebook/create-react-app). It is intended to be used as a template for building your own chat application.
+ReactLLLM is a chat application that allows users to interact with a small language model (SLM) running on a local inference server via [LM Studio](https://lmstudio.ai). This project was bootstrapped with [Create React App](www.github.com/facebook/create-react-app). It is intended to be used as a template for building your own chat application.
 
 ## Prerequisites
 

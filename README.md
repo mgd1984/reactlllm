@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Your App Name
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Your App Name is a chat application that allows users to interact with an AI assistant. It uses LM Studio and runs a Mistral 7b fine-tuned model.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before you begin, ensure you have met the following requirements:
 
-### `npm start`
+- You have a recent version of Node.js installed.
+- You have access to LM Studio and have a Mistral 7b fine-tuned model available.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Follow these steps to install and run the app:
 
-### `npm test`
+1. Clone the repository: `git clone https://github.com/yourusername/your-app-name.git`
+2. Navigate to the project directory: `cd your-app-name`
+3. Install the dependencies: `npm install`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Configuration
 
-### `npm run build`
+Before you can run the app, you need to configure it to use your Mistral 7b fine-tuned model:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. In LM Studio, navigate to your Mistral 7b fine-tuned model and copy its ID.
+2. In the project directory, create a new file named `.env`.
+3. In the `.env` file, add the following line: `REACT_APP_MODEL_ID=your-model-id`
+    Replace `your-model-id` with the ID of your Mistral 7b fine-tuned model.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running the App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To start the development server, run the following command in the project directory: `npm start`
 
-### `npm run eject`
+The app will be available at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To use the application, simply type your message into the user prompt input field and press the "Send" button. The AI assistant will respond with a message in the chat window.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Features
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- User prompt input field: Allows the user to type a message to the AI assistant.
+- System prompt input field: Allows the user to type a system prompt for the AI assistant.
+- Chat window: Displays the messages from the user and the AI assistant.
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions are welcome! If you would like to contribute to this project, please follow these guidelines:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a pull request
 
-### Code Splitting
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project is licensed under the [License Name]. For more details, see the [LICENSE](./LICENSE) file.
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any inquiries or feedback, please contact [Your Email Address].

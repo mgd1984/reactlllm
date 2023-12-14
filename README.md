@@ -1,6 +1,6 @@
 # ReactLLLM (React Local LLM)
 
-ReactLLLM is a chat application that allows users to interact with a small language model (SLM) running on a local inference server via [LM Studio](https://lmstudio.ai). This project was bootstrapped with [Create React App](www.github.com/facebook/create-react-app). It is intended to be used as a template for building your own chat application.
+ReactLLLM is a basic chat application that allows users to interact with a small language model (SLM) running on a local inference server via [LM Studio](https://lmstudio.ai). This project was bootstrapped with [Create React App](www.github.com/facebook/create-react-app). It is intended to be used as a template for building your own chat application and to explore the capabilities of local language models.
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ Before you begin, ensure you have met the following requirements:
 Follow these steps to install and run the app:
 
 1. Clone the repository: `git clone https://github.com/mgd1984/reactlllm.git`
-2. Navigate to the project directory: `cd reactllm`
+2. Navigate to the project directory: `cd reactlllm`
 3. Install the dependencies: `npm install`
 
 
@@ -33,6 +33,8 @@ To use the application, simply type your message into the user prompt input fiel
 - User prompt input field: Allows the user to type a message to the AI assistant.
 - System prompt input field: Allows the user to type a system prompt for the AI assistant.
 - Chat window: Displays the messages from the user and the AI assistant.
+
+![Screenshot](ezgif.com-video-to-gif-converted.gif)
 
 ## Local Inference Server Notes
 
